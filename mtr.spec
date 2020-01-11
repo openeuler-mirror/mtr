@@ -2,7 +2,7 @@
 
 Name:          mtr
 Version:       0.92
-Release:       7
+Release:       8
 Epoch:         2
 Summary:       Ping and Traceroute Network Diagnostic Tool
 License:       GPLv2 and BSD
@@ -10,7 +10,6 @@ URL:           https://www.bitwizard.nl/mtr/
 Source0:       https://github.com/traviscross/mtr/archive/v%{version}/%{name}-%{version}.tar.gz
 Source1:       net-x%{name}.desktop
 Source2:       mtr-gtk-pkexec-wrapper.sh
-Source3:       org.fedoraproject.mtr.policy
 
 BuildRequires: git autoconf automake libtool ncurses-devel gtk2-devel desktop-file-utils
 
@@ -43,7 +42,6 @@ echo "%{version}" > .tarball-version
 %install
 install -D -p -m 0755 mtr %{buildroot}%{_sbindir}/mtr
 install -D -p -m 0755 %{SOURCE2} %{buildroot}%{_bindir}/xmtr
-install -D -p -m 0644 %{SOURCE3} %{buildroot}%{_datadir}/polkit-1/actions/org.fedoraproject.mtr.policy
 install -D -p -m 0755 xmtr.bin %{buildroot}%{_bindir}/xmtr.bin
 install -D -p -m 0644 img/mtr_icon.xpm %{buildroot}%{_datadir}/pixmaps/mtr_icon.xpm
 
@@ -63,7 +61,6 @@ make test
 %{_datadir}/pixmaps/mtr_icon.xpm
 %{_datadir}/applications/net-x%{name}.desktop
 %{_datadir}/bash-completion/completions/%{name}
-%{_datadir}/polkit-1/actions/org.fedoraproject.mtr.policy
 
 %files help
 %defattr(-,root,root)
@@ -71,6 +68,12 @@ make test
 %{_mandir}/man8/*
 
 %changelog
+* Wed Jan 11 2020 openEuler Buildteam <buildteam@openeuler.org> - 2:0.92-8
+- Type:NA
+- ID:NA
+- SUG:NA
+- DESC:delete unused info
+
 * Sat Dec 28 2019 openEuler Buildteam <buildteam@openeuler.org> - 2:0.92-7
 - Type:bugfix
 - Id:NA
