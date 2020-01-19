@@ -68,7 +68,7 @@ make test
 %{_mandir}/man8/*
 
 %changelog
-* Wed Jan 11 2020 openEuler Buildteam <buildteam@openeuler.org> - 2:0.92-8
+* Sat Jan 11 2020 openEuler Buildteam <buildteam@openeuler.org> - 2:0.92-8
 - Type:NA
 - ID:NA
 - SUG:NA
