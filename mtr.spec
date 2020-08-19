@@ -1,8 +1,8 @@
 %global _hardened_build 1
 
 Name:          mtr
-Version:       0.92
-Release:       8
+Version:       0.93
+Release:       1
 Epoch:         2
 Summary:       Ping and Traceroute Network Diagnostic Tool
 License:       GPLv2 and BSD
@@ -64,10 +64,16 @@ make test
 
 %files help
 %defattr(-,root,root)
-%doc NEWS README SECURITY TODO
+%doc NEWS README.md SECURITY TODO
 %{_mandir}/man8/*
 
 %changelog
+* Wed Aug 19 2020 lunankun <lunankun@huawei.com> - 2:0.93-1
+- Type:requirement
+- ID:NA
+- SUG:NA
+- DESC:update to 1.93-1
+
 * Sat Jan 11 2020 openEuler Buildteam <buildteam@openeuler.org> - 2:0.92-8
 - Type:NA
 - ID:NA
