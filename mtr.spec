@@ -2,7 +2,7 @@
 
 Name:          mtr
 Version:       0.93
-Release:       1
+Release:       2
 Epoch:         2
 Summary:       Ping and Traceroute Network Diagnostic Tool
 License:       GPLv2 and BSD
@@ -68,6 +68,9 @@ make test
 %{_mandir}/man8/*
 
 %changelog
+* Fri May 28 2021 zhanglin <lin.zhang@turbolinux.com.cn> - 2:0.93-2
+- modify net-xmtr.desktop file for Xfce4 Traceroute
+
 * Wed Aug 19 2020 lunankun <lunankun@huawei.com> - 2:0.93-1
 - Type:requirement
 - ID:NA
