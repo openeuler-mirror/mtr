@@ -2,7 +2,7 @@
 
 Name:          mtr
 Version:       0.94
-Release:       2
+Release:       3
 Epoch:         2
 Summary:       Ping and Traceroute Network Diagnostic Tool
 License:       GPLv2 and BSD
@@ -10,7 +10,7 @@ URL:           https://www.bitwizard.nl/mtr/
 Source0:       https://github.com/traviscross/mtr/archive/v%{version}/%{name}-%{version}.tar.gz
 Source1:       net-x%{name}.desktop
 Source2:       mtr-gtk-pkexec-wrapper.sh
-
+Patch0:       fix_for_printw_error.patch
 BuildRequires: git autoconf automake libtool ncurses-devel gtk2-devel desktop-file-utils
 
 Provides:       %{name}-gtk = %{epoch}:%{version}-%{release}
@@ -25,7 +25,7 @@ and percentage for all network hops between the systems.
 %package_help
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n %{name}-%{version} -p1
 
 %build
 export CFLAGS="%{optflags} -fPIE"
@@ -68,6 +68,9 @@ make test
 %{_mandir}/man8/*
 
 %changelog
+* Fri Mar 11 2022 lin.zhang <lin.zhang@turbolinux.com.cn> - 0.94-3
+- add patch fix_for_printw_error.patch
+
 * Wed Mar 3 2021 lin.zhang <lin.zhang@turbolinux.com.cn> - 0.94-2
 - modify net-xmtr.desktop file for Xfce4 Traceroute
 
